@@ -73,7 +73,8 @@ int main(void) {
 	pMOG2 = cv::createBackgroundSubtractorMOG2(500, 16.0, 1); //MOG2 approach
 
 	capVideo.read(imgFrame1);
-
+	cout << "Width : " << imgFrame1.cols << endl;
+	cout << "Height: " << imgFrame1.rows << endl;
 	//CONTROL LINE FOR CARCOUNT ~AREA2 (LEFT WAY)
 	crossingLineLeft[0].x = 500;
 	crossingLineLeft[0].y = 280;
@@ -287,7 +288,7 @@ bool checkIfBlobsCrossedTheLineLeft(std::vector<Blob> &blobs, int &carCountLeft,
 				blnAtLeastOneBlobCrossedTheLineLeft = true;
 				timeCount = (frameCount - prevFrameCount) / fps;
 				prevFrameCount = frameCount;
-				cout << "flowrate: " << 1 / timeCount << endl;
+				cout << "luu luong: " << 1 / timeCount << endl;
 
 			}
 		}
@@ -306,7 +307,7 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy) {
 			double dblFontScale = (imgFrame2Copy.rows * imgFrame2Copy.cols) / 300000.0;
 			int intFontThickness = (int)std::round(dblFontScale * 1.0);
 
-			cv::putText(imgFrame2Copy, std::to_string(i), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, intFontThickness);
+			//cv::putText(imgFrame2Copy, std::to_string(i), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, intFontThickness);
 		}
 	}
 }
@@ -324,5 +325,7 @@ void drawCarCountOnImage(cv::Mat &imgFrame2Copy) {
 	cv::Size textSize1 = cv::getTextSize(std::to_string(carCountLeft), intFontFace, dblFontScale, intFontThickness, 0);
 
 	cv::putText(imgFrame2Copy, "Flowrate:" + std::to_string(1 / timeCount), cv::Point(500, 50), intFontFace, dblFontScale, SCALAR_YELLOW, intFontThickness);
-	cv::putText(imgFrame2Copy, "Vehicle count:" + std::to_string(carCountLeft), cv::Point(10, 50), intFontFace, dblFontScale, SCALAR_YELLOW, intFontThickness);
+	cv::putText(imgFrame2Copy, "Cars:" + std::to_string(carCountLeft), cv::Point(10, 50), intFontFace, dblFontScale, SCALAR_YELLOW, intFontThickness);
 }
+//
+///
