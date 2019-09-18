@@ -1,0 +1,6 @@
+3/9 - 9/9: x? lí xong ?nh trên facescrub, kêt h?p facescrub và casia l?i d? t?o tfrecord và b?t d?u ti?n hành train vs triplet loss
+9/9 - 16/9: Debug(n?u có) và tìm hi?u l?i v? code starGAN
+16/9 - 23/9: Làm vi?c vs anh Thanh Nguyen d? build webapp
+23/9 - 30/9: Kêt h?p backend (tensorflow, python) vào frontend c?a webapp
+30/9 - 12/10: Debug và ch?y th? starGAN và IlGan trên webapp. N?u còn th?i gian thì có th? implement thêm child face GAN n?a. Có 
+th? t?o thêm slide d? nói v? GAN.
